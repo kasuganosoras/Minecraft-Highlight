@@ -80,7 +80,7 @@ class Highlight {
 			}
 		}
 		if($tagOpen) {
-			$result .= "</span>";
+			$result .= $this->getLatest($tmpColor);
 			$tagOpen = false;
 		}
 		return $result;

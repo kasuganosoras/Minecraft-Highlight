@@ -41,6 +41,39 @@ class Highlight {
 		}
 	}
 	
+	public function textToColorCode($text) {
+		$colorList = Array(
+			'dark_blue' => '1',
+			'dark_green' => '2',
+			'dark_aqua' => '3',
+			'dark_red' => '4',
+			'dark_purple' => '5',
+			'gold' => '6',
+			'gray' => '7',
+			'dark_gray' => '8',
+			'blue' => '9',
+			'black' => '0',
+			'green' => 'a',
+			'aqua' => 'b',
+			'red' => 'c',
+			'light_purple' => 'd',
+			'yellow' => 'e',
+			'white' => 'f',
+			'reset' => 'gr',
+			'bold' => 'l',
+			'italic' => 'o',
+			'underline' => 'n',
+			'strike' => 'm',
+		);
+		$text = strtolower($text);
+		if(isset($colorList[$text])) {
+			$color = "§{$colorList[$text]}";
+		} else {
+			$color = "§r";
+		}
+		return $color;
+	}
+	
 	public function convert($str) {
 		$tagStart = false;
 		$tagOpen = false;

@@ -63,7 +63,7 @@ class Highlight {
 						$tagStart = false;
 						$result .= $tmpColor;
 						$tagOpen = true;
-					} elseif($curstr == "r") {
+					} elseif($curstr == "r" && $tagStart) {
 						$tagStart = false;
 						$result .= $this->getLatest($tmpColor);
 						$tagOpen = false;
